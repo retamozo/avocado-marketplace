@@ -11,7 +11,6 @@ const NavBar = () => {
         <Link href="/about">
           <a>About</a>
         </Link>
-        <p className="leading-desktop-l3">texto con line height custom</p>
         <Link href="tailwind_playground"> TAILWIND PLAYGROUND</Link>
       </menu>
     </nav>
