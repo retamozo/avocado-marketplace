@@ -4,14 +4,15 @@ import Link from "next/link";
 const NavBar = () => {
   return (
     <nav>
-      <menu>
+      <menu className="h-1/2 mx-auto bg-center bg-neutrals-500">
         <Link href="/">
-          <a>Home</a>
+          <a className="">Home</a>
         </Link>
         <Link href="/about">
           <a>About</a>
         </Link>
-        <Link href="example_grid"> Example grid tailwindcss</Link>
+        <p className="leading-desktop-l3">texto con line height custom</p>
+        <Link href="tailwind_playground"> TAILWIND PLAYGROUND</Link>
       </menu>
     </nav>
   );
