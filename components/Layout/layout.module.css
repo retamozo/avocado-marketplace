@@ -1,0 +1,6 @@
+/* Module CSS are meant to just affect specifics parts of our app.
+  This is a trend that comes from PostCSS
+*/
+.container {
+  background-color: salmon;
+}

@@ -1,0 +1,8 @@
+/* Created this to see how global css works */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .container {
+  background-color: salmon;
+} */
