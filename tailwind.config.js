@@ -74,7 +74,9 @@ module.exports = {
       "6xl": "72rem",
       "7xl": "80rem",
     },
+
     spacing: {
+
       px: "1px",
       0: "0px",
       0.5: "0.125rem",
@@ -603,6 +605,19 @@ module.exports = {
       widest: "0.1em",
     },
     lineHeight: {
+      mobile: {
+        0: "4rem"
+      },
+      desktop: {
+        title: {
+          l1: "80%",
+          l2: "80%",
+          l3: "100%"
+        },
+        text: {
+
+        }
+      },
       none: "1",
       tight: "1.25",
       snug: "1.375",
