@@ -7,7 +7,6 @@ const getAvoById = async (req: NextApiRequest, res: NextApiResponse) => {
 
     // This will not fail though ...
     try {
-
         const db = new DB()
         const id = req.query.id;
         const avo = await db.getById(id as string)

@@ -1,12 +1,42 @@
-import React from "react";
-import { useRouter } from "next/router";
+import React, { FunctionComponent } from "react";
+import fetch from "isomorphic-unfetch";
+import { GetStaticProps } from "next";
+import { API_ROUTE } from "@utils";
 
-const ProductItem = () => {
-  const {
-    query: { productId },
-  } = useRouter();
+export const getStaticPaths = async () => {
+  const req = await fetch(API_ROUTE.BASE);
+  const { data: prodList }: TAPIAvoResponse = await req.json();
+  const paths = prodList.map(({ id }) => ({
+    params: {
+      productId: id,
+    },
+  }));
+  return {
+    paths,
+    // incremental static generation
+    fallback: false,
+  };
+};
 
-  return <div>product {productId}</div>;
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const req: TProduct = await fetch(`${API_ROUTE.BASE}/${params.productId}`);
+  const res = await req.json();
+  return {
+    props: {
+      product: res,
+    },
+  };
+};
+
+const ProductItem: FunctionComponent<TProduct> = (product) => {
+  if (!product) return null;
+  return (
+    <div>
+      <p>{product?.attributes?.description || ""}</p>
+      <img src={product?.image || ""} />
+      <strong>{product?.price || ""}</strong>
+    </div>
+  );
 };
 
 export default ProductItem;

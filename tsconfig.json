@@ -2,13 +2,34 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@database": ["database"],
-      "@components": ["components/index.ts"],
-      "@cors": ["cors"],
-      "@store": ["store/index.ts"]
+      "@database": [
+        "database"
+      ],
+      "@components": [
+        "components/index.ts"
+      ],
+      "@cors": [
+        "cors"
+      ],
+      "@store": [
+        "store/index.ts"
+      ],
+      "@hooks": [
+        "hooks/index.ts"
+      ],
+      "@api-service": [
+        "pages/api/index.ts"
+      ],
+      "@utils": [
+        "utils/index.ts"
+      ]
     },
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -22,6 +43,12 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
