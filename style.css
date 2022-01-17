@@ -6,3 +6,21 @@
 /* .container {
   background-color: salmon;
 } */
+/*  Checking how variants works in tailwind playground */
+@variants hover {
+  .zoom {
+    transform: scale(2);
+  }
+  .rotate {
+    transform: rotate(45deg);
+  }
+}
+
+@responsive {
+  .rotate {
+    transform: rotate(75deg);
+    color:red;
+  }
+}
+
+/*  END - Checking how variants works in tailwind playground */

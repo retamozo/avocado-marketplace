@@ -1,6 +1,6 @@
 import React from "react";
 
-const ExampleGridVariant = () => {
+const TailwindPlayground = () => {
   return (
     <>
       <div className="flex flex-wrap m-4">
@@ -122,11 +122,78 @@ const ExampleGridVariant = () => {
           <div className="inline-block my-5 bg-_dontuse-pink">2</div>
           <div className="inline my-5 bg-_dontuse-yellow">3</div>
           <div className="hidden my-5 bg-_dontuse-yellow">hidden</div>
+        </div>
 
+        <div className="m-8 text-neutrals-100">
+          <h2>FLEXBOX eje horizontal</h2>
+          <div className="flex justify-around bg-_dontuse-gray-dark p-8">
+            <div className="bg-_dontuse-gray-light px-4 py-2 m-2">1</div>
+            <div className="bg-_dontuse-gray-light px-4 py-2 m-2">2</div>
+            <div className="bg-_dontuse-gray-light px-4 py-2 m-2">3</div>
+            <div className="bg-_dontuse-gray-light px-4 py-2 m-2">4</div>
+            <div className="bg-_dontuse-gray-light px-4 py-2 m-2">5</div>
+          </div>
+          <h2 className="m-8">FLEXBOX eje vertical</h2>
+          <div className="flex h-64 place-items-end bg-_dontuse-gray-dark p-8">
+            place-items-end
+            <div className="bg-_dontuse-gray-light px-4 py-2 m-2">1</div>
+            <div className="bg-_dontuse-gray-light px-4 py-2 m-2">2</div>
+            <div className="bg-_dontuse-gray-light px-4 py-2 m-2">3</div>
+            <div className="bg-_dontuse-gray-light px-4 py-2 m-2">4</div>
+            <div className="bg-_dontuse-gray-light px-4 py-2 m-2">5</div>
+          </div>
+          <div className="flex h-64 items-stretch bg-_dontuse-gray-dark p-8">
+            ITEMS STRETCH
+            <div className="bg-_dontuse-gray-light px-4 py-2 m-2">1</div>
+            <div className="bg-_dontuse-gray-light px-4 py-2 m-2">2</div>
+            <div className="bg-_dontuse-gray-light px-4 py-2 m-2">3</div>
+            <div className="bg-_dontuse-gray-light px-4 py-2 m-2">4</div>
+            <div className="bg-_dontuse-gray-light px-4 py-2 m-2">5</div>
+          </div>
+          <div className="flex h-64 justify-between items-baseline bg-_dontuse-gray-dark p-8">
+            ITEMS BASELINE
+            <div className="text-neutrals-0">Hellooooooooo</div>
+            <div className="bg-_dontuse-gray-light px-4 py-2 m-2">1</div>
+            <div className="bg-_dontuse-gray-light px-4 py-2 m-2">2</div>
+          </div>
+          <div className="flex h-64 justify-between items-baseline bg-_dontuse-gray-dark p-8">
+            ORDER
+            <div className="text-neutrals-0 order-3">Hellooooooooo</div>
+            <div className="bg-_dontuse-gray-light px-4 py-2 m-2 order-3">
+              1
+            </div>
+            <div className="bg-_dontuse-gray-light px-4 py-2 m-2 order-1">
+              2
+            </div>
+          </div>
+        </div>
+        <div className="m-8 text-neutrals-500">
+          MI PROPIA UTILERIA
+          <div className="hover:zoom mx-auto mt-16 h-40 w-40 bg-_dontuse-gray-light font-bold">
+            zoom - hover me
+          </div>
+          <div className="hover:rotate mx-auto mt-16 h-40 w-40 bg-_dontuse-gray-light font-bold">
+            rotate - hover me
+          </div>
+          <div className="sm:rotate mx-auto mt-16 h-40 w-40 bg-_dontuse-gray-light font-bold">
+            check me in mobile
+          </div>
+        </div>
+      </div>
+      <div className="mt-16 ml-5">
+        <h2>Variantes </h2>
+        <div className="pt-5 mt-8">
+          <div className="mt-16 ml-5 bg-_dontuse-gray-light">
+            <h2>cambios de estado</h2>
+
+            <div className="pt-5">
+              <button disabled className="disabled:opacity-8 bg-_dontuse-blue">hola</button>
+            </div>
+          </div>
         </div>
       </div>
     </>
   );
 };
 
-export default ExampleGridVariant;
+export default TailwindPlayground;
