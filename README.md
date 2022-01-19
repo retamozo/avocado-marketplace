@@ -9,6 +9,6 @@
 
 ## Requirements
 
-All goals were set in the [original challenge repository](https://github.com/Aerolab/frontend-developer-coding-challenge), along the visual resources, services and API toke used in the project.
+All goals were set in the [original challenge repository](https://github.com/Aerolab/frontend-developer-coding-challenge), along the visual resources, services and API token used in the project.
 
 
