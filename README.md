@@ -1,13 +1,14 @@
 <p align="center">
-  <!-- <a href="https://platzi.com/cursos/next-2020/" target="_blank"> -->
-    <img alt="NextJS Avocado project" src="https://library.kissclipart.com/20191014/eae/kissclipart-avocado-af534ddf627d7354.png" width="60" />
-  <!-- </a> -->
+<img src="public/icons/aerolab-logo-1.svg" />
 </p>
-<h1 align="center">
-  Project I made to learn NextJs fundamentals and Tailwindcss
+
+<h1 align="center" style="border:none;">
+  The <a href="https://twitter.com/aerolab" target="_blank">Aerolab</a> frontend developer challenge
 </h1>
-<p align="center">
-  <!-- <a href="https://platzi-avo.vercel.app/" target="_blank">
-    https://platzi-avo.vercel.app/
-  </a> -->
-</p>
+<p align="center"> by <a href="https://twitter.com/aerolab" target="_blank">Enzo Retamozo</a></p>
+
+## Requirements
+
+All goals were set in the [original challenge repository](https://github.com/Aerolab/frontend-developer-coding-challenge), along the visual resources, services and API toke used in the project.
+
+
