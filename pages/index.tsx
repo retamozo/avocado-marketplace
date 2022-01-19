@@ -14,6 +14,8 @@ import { Avocado } from "@components";
 //     }, // will be passed to the page component as props
 //   };
 // }
+
+// This is an inefficient apporach
 export async function getServerSideProps() {
   const { data: productList }: TAPIAvoResponse = await fetch(
     ` ${API_ROUTE.BASE}`
