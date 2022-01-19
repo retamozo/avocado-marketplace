@@ -11,7 +11,7 @@ const NavBar = () => {
         <Link href="/about">
           <a>About</a>
         </Link>
-        <Link href="tailwind"> TAILWIND PLAYGROUND</Link>
+        <Link href="/tailwind"> TAILWIND PLAYGROUND</Link>
       </menu>
     </nav>
   );
