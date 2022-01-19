@@ -19,7 +19,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const req: TProduct = await fetch(`${API_ROUTE.BASE}/${params.productId}`);
+  const req = await fetch(`${API_ROUTE.BASE}/${params.productId}`);
   const res = await req.json();
   return {
     props: {
@@ -28,8 +28,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
-const ProductItem: FunctionComponent<TProduct> = (product) => {
-  if (!product) return null;
+const ProductItem: FunctionComponent<{ product: TProduct }> = ({ product }) => {
   return (
     <div>
       <p>{product?.attributes?.description || ""}</p>

@@ -11,7 +11,7 @@ const getAvoById = async (req: NextApiRequest, res: NextApiResponse) => {
         const id = req.query.id;
         const avo = await db.getById(id as string)
 
-        res.status(200).json(avo)
+        res.status(200).json({ data: avo })
     }
 
     catch (err) {

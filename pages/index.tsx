@@ -3,7 +3,18 @@ import fetch from "isomorphic-unfetch";
 import { API_ROUTE } from "@utils";
 import { Avocado } from "@components";
 
-export async function getStaticProps() {
+// export async function getStaticProps() {
+//   const { data: productList }: TAPIAvoResponse = await fetch(
+//     ` ${API_ROUTE.BASE}`
+//   ).then((data) => data.json());
+
+//   return {
+//     props: {
+//       productList,
+//     }, // will be passed to the page component as props
+//   };
+// }
+export async function getServerSideProps() {
   const { data: productList }: TAPIAvoResponse = await fetch(
     ` ${API_ROUTE.BASE}`
   ).then((data) => data.json());
@@ -15,8 +26,9 @@ export async function getStaticProps() {
   };
 }
 
-const Index: FunctionComponent<TProduct[]> = ({ productList }) => {
-  console.log("productList", productList);
+const Index: FunctionComponent<{ productList: TProduct[] }> = ({
+  productList,
+}) => {
   return (
     <div>
       <h1 className="text-3xl font-bold bg-gren-default">Hello world!</h1>
