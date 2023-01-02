@@ -1,5 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-
 // This will apply on every project screen
 class MyDocument extends Document {
   // Don't need to modify every page in my project

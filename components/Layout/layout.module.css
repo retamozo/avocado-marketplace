@@ -1,6 +1,8 @@
 /* Module CSS are meant to just affect specifics parts of our app.
+ * e.g import styles from "styles.module.css"
+       return <button className={styles.container} ..>
   This is a trend that comes from PostCSS
 */
-.container {
+/* .container {
   background-color: salmon;
-}
+} */
