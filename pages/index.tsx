@@ -1,9 +1,10 @@
 import React, { FunctionComponent } from "react";
 import fetch from "isomorphic-unfetch";
 import { API_ROUTE } from "@utils";
-import { Avocado } from "@components";
+import { AvolcadoList, CardItem } from "@components";
 
-// export async function getStaticProps() {
+// This is an inefficient apporach
+// export async function getServerSideProps() {
 //   const { data: productList }: TAPIAvoResponse = await fetch(
 //     ` ${API_ROUTE.BASE}`
 //   ).then((data) => data.json());
@@ -15,10 +16,9 @@ import { Avocado } from "@components";
 //   };
 // }
 
-// This is an inefficient apporach
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const { data: productList }: TAPIAvoResponse = await fetch(
-    ` ${API_ROUTE.BASE}`
+    `${API_ROUTE.BASE}`
   ).then((data) => data.json());
 
   return {
@@ -31,15 +31,7 @@ export async function getServerSideProps() {
 const Index: FunctionComponent<{ productList: TProduct[] }> = ({
   productList,
 }) => {
-  return (
-    <div>
-      <h1 className="text-3xl font-bold bg-gren-default">Hello world!</h1>
-      <p>This is the root page</p>
-      {productList.map((card) => (
-        <Avocado key={card.id} {...card} />
-      ))}
-    </div>
-  );
+  return <AvolcadoList products={productList} />;
 };
 
 export default Index;
