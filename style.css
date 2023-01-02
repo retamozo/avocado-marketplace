@@ -19,8 +19,23 @@
 @responsive {
   .rotate {
     transform: rotate(75deg);
-    color:red;
+    color: red;
   }
 }
-
 /*  END - Checking how variants works in tailwind playground */
+
+/*
+* This a CSS Trick to keep the footer at the bottom.
+* Find out more modern CSS tricks at:
+* https://moderncss.dev/
+*/
+
+#__next > main {
+  min-height: calc(100vh - 144px);
+  /* 56px of footer and header each plus 32px (h & b) of header*/
+}
+
+/* #__next > main {
+  margin: 1rem auto 0;
+  max-width: 80ch;
+}  */
