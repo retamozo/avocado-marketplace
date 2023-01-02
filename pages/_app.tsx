@@ -1,7 +1,8 @@
 import { AppProps } from "next/app";
 import { Layout } from "components";
 import "../style.css";
-
+import "semantic-ui-css/semantic.min.css";
+import { CartProvider } from "store/CartProvider";
 /*
     Cases where I would want to extend the App
         - Providers
@@ -13,11 +14,11 @@ import "../style.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div className="container">
+    <CartProvider>
       <Layout>
-        <Component {...pageProps} />;
+        <Component {...pageProps} />
       </Layout>
-    </div>
+    </CartProvider>
   );
 }
 

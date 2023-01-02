@@ -1,3 +1,5 @@
 export { default as Layout } from "./Layout";
 export { default as NavBar } from "./NavBar";
-export { default as Avocado } from "./Avocado";
+export { default as CardItem } from "./ProductCard";
+export { default as AvolcadoList } from "./ProductList"
+export { default as Footer } from "./Footer"
