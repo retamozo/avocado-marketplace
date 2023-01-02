@@ -1,7 +1,6 @@
 import allData from './data'
 
 // Fake database.
-// Pretty much copied from @jonalvarezz to get focus only in the NextJs solution
 class Database {
     constructor() { }
 

@@ -55,7 +55,7 @@ const data: Record<TProductId, TProduct> = {
       taste: "Creamy, is an avocado",
     },
   },
-  b8uthe2y: {
+  "b8uthe2y": {
     name: "Hass Avocado",
     id: "b8uthe2y",
     sku: "RMRCZN7E",
@@ -69,7 +69,7 @@ const data: Record<TProductId, TProduct> = {
       taste: "Gorgeous, is an avocado",
     },
   },
-  ewxsd6xb: {
+  "ewxsd6xb": {
     name: "Lamb Hass Avocado",
     id: "ewxsd6xb",
     sku: "N55229ZA",
@@ -83,7 +83,7 @@ const data: Record<TProductId, TProduct> = {
       taste: "Great, is an avocado",
     },
   },
-  fpr72m9k: {
+  "fpr72m9k": {
     name: "Pinkerton Avocado",
     id: "fpr72m9k",
     sku: "B4HZ42TM",
@@ -97,7 +97,7 @@ const data: Record<TProductId, TProduct> = {
       taste: "Marvelous, is an avocado",
     },
   },
-  t9dv25gs: {
+  "t9dv25gs": {
     name: "Reed Avocado",
     id: "t9dv25gs",
     sku: "ZY3T9XXC",
@@ -111,7 +111,7 @@ const data: Record<TProductId, TProduct> = {
       taste: "Exquisite, is an avocado",
     },
   },
-  t345w48y: {
+  "t345w48y": {
     name: "Zutano Avocado",
     id: "t345w48y",
     sku: "MW79ZZ6Y",
