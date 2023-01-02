@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import fetch from "isomorphic-unfetch";
 import { API_ROUTE } from "@utils";
-import { AvolcadoList, CardItem } from "@components";
+import { AvolcadoList } from "@components";
 
 // This is an inefficient apporach
 // export async function getServerSideProps() {

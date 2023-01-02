@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import avocadoLogo from "public/images/avocado_base.svg";
 import BasketLogo from "public/images/shopping-basket.svg";
-import { useCart } from "store/CartProvider";
+import { useCart } from "store";
 
 const NavBar = () => {
   const { itemsQuantity } = useCart();

@@ -1,6 +1,6 @@
 import { CardItem } from "@components";
 import { FunctionComponent, createElement, ReactNode } from "react";
-import { useCartMutations } from "store/CartProvider";
+import { useCartMutations } from "store";
 
 type ProductListProps = {
   products: TProduct[];

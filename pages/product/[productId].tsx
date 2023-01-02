@@ -4,7 +4,7 @@ import { GetStaticProps } from "next";
 import { API_ROUTE } from "@utils";
 import Image from "next/image";
 import { Accordion, Table, Label, Icon } from "semantic-ui-react";
-import { useCartMutations } from "store/CartProvider";
+import { useCartMutations } from "store";
 
 export const getStaticPaths = async () => {
   const req = await fetch(API_ROUTE.BASE);
