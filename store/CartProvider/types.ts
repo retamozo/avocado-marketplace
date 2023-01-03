@@ -39,6 +39,6 @@ export type CartState = {
 
 export type UseCart = () => {
   itemsQuantity: number;
-  items: CartItem;
+  items: Record<string, CartItem>;
   open: boolean;
 };

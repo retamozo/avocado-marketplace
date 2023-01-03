@@ -32,7 +32,7 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
       };
     }
     default:
-      throw new Error(`Unhandled action type ${action.type}`);
+      throw new Error(`Unhandled action type in Cart Reducer`);
   }
 };
 
