@@ -125,6 +125,20 @@ const data: Record<TProductId, TProduct> = {
       taste: "Splendid, is an avocado",
     },
   },
+  "tr1baby": {
+    name: "En la calle me conocen como el",
+    id: "tr1baby",
+    sku: "TR1",
+    price: 1.25,
+    image: "/images/zutano.jpg",
+    attributes: {
+      description:
+        "Agressive, hardy and milicous avocado cultivated and harvested in La Boca",
+      shape: "Pear",
+      hardiness: "30 °C",
+      taste: "Splendid, is an avocado",
+    },
+  }
 };
 
 export default data;
