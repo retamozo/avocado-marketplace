@@ -6,7 +6,11 @@ const Footer = () => {
       <article className="flex flex-col text-center p-2">
         <p>
           Made with ♥ by{" "}
-          <a href="#" target="_blank" referrerPolicy="no-referrer">
+          <a
+            href="https://github.com/retamozo/avocado-marketplace"
+            target="_blank"
+            referrerPolicy="no-referrer"
+          >
             Enzo Retamozo
           </a>
         </p>
