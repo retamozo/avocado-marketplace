@@ -1,27 +1,28 @@
 import { CardItem } from "@components";
-import { FunctionComponent, createElement, ReactNode } from "react";
-import { useCartMutations } from "store";
+import { FunctionComponent, useCallback } from "react";
+import { useCart, useCartMutations } from "store";
 
 type ProductListProps = {
   products: TProduct[];
 };
 
 const ProductList: FunctionComponent<ProductListProps> = ({ products }) => {
-  const { addToCart } = useCartMutations();
-
+  const { addToCart, removeItem } = useCartMutations();
+  const { items } = useCart();
   return (
     <article className="flex flex-wrap justify-center px-4 bg-center">
       {products &&
         !!products.length &&
-        products.map((card) => {
-          return (
-            <CardItem
-              key={card.id}
-              onClick={() => addToCart({ ...card })}
-              {...card}
-            />
-          );
-        })}
+        products.map((card) => (
+          <CardItem
+            key={card.id}
+            onAddItem={() => addToCart(card)}
+            onRemoveItem={(id) => removeItem({ id })}
+            hasMany={items?.[card.id]?.quantity > 0}
+            quantity={items?.[card.id]?.quantity}
+            {...card}
+          />
+        ))}
     </article>
   );
 };

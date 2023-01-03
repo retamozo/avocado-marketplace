@@ -5,7 +5,7 @@ const Layout: FunctionComponent = ({ children }) => {
   return (
     <>
       <NavBar />
-      <main>{children}</main>
+      <main className="relative">{children}</main>
       <Footer />
     </>
   );

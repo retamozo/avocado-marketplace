@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import fetch from "isomorphic-unfetch";
 import { API_ROUTE } from "@utils";
-import { AvolcadoList } from "@components";
+import { AvolcadoList, Cart } from "@components";
 
 // This is an inefficient apporach
 // export async function getServerSideProps() {
@@ -31,7 +31,12 @@ export async function getStaticProps() {
 const Index: FunctionComponent<{ productList: TProduct[] }> = ({
   productList,
 }) => {
-  return <AvolcadoList products={productList} />;
+  return (
+    <>
+      <AvolcadoList products={productList} />
+      <Cart />
+    </>
+  );
 };
 
 export default Index;
