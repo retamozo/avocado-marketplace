@@ -5,58 +5,27 @@ import React, {
   useReducer,
   useMemo,
 } from "react";
-import { ActionType, CartAction, CartItem, CartState, UseCart } from "./types";
+import { cartReducer, initialCartState } from "./cartReducer";
+import {
+  ActionType,
+  CartAction,
+  CartState,
+  UseCart,
+  RemovePayload,
+} from "./types";
 
 const CartContext = createContext<CartState | undefined>(undefined);
+
 const CartMutationsContext = createContext<Dispatch<CartAction> | undefined>(
   undefined
 );
 
 CartContext.displayName = "Product Card Context";
 
-const handleAddItem = (
-  inventory: CartItem,
-  { product, quantity: newQuantity }: CartAction
-): CartItem => {
-  const existentItem = inventory[product.id];
-  console.log(existentItem);
-
-  return !!existentItem
-    ? {
-        [product.id]: {
-          item: existentItem.item,
-          quantity: newQuantity > 0 ? newQuantity : existentItem.quantity + 1,
-        },
-      }
-    : {
-        [product.id]: {
-          item: { ...product },
-          quantity: 1,
-        },
-      };
-};
-
-const cartReducer = (state: CartState, action: CartAction) => {
-  switch (action.type) {
-    case ActionType.Add: {
-      return {
-        ...state,
-        items: { ...state.items, ...handleAddItem(state.items, action) },
-      };
-    }
-    default:
-      throw new Error(`Unhandled action type ${action.type}`);
-  }
-};
-
-const initialState: CartState = {
-  items: {},
-  error: false,
-  loading: false,
-};
+CartMutationsContext.displayName = "Card Mutations Context";
 
 const CartProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(cartReducer, initialState);
+  const [state, dispatch] = useReducer(cartReducer, initialCartState);
 
   return (
     <CartContext.Provider value={state}>
@@ -69,6 +38,7 @@ const CartProvider = ({ children }) => {
 
 const useCart: UseCart = () => {
   const context = useContext(CartContext);
+
   if (typeof context === "undefined") {
     throw new Error("useCount must be used within a CartProvider");
   }
@@ -84,6 +54,7 @@ const useCart: UseCart = () => {
   return {
     items: context.items,
     itemsQuantity,
+    open: context.open,
   };
 };
 
@@ -95,15 +66,36 @@ const useCartMutations = () => {
     );
   }
 
+  const removeItem = ({ id, quantity, all }: RemovePayload) => {
+    dispatch({
+      type: ActionType.Remove,
+      payload: {
+        id,
+        quantity,
+        all,
+      },
+    });
+  };
+
   const addToCart = (item: TProduct, quantity: number = 0) =>
     dispatch({
-      product: item,
-      quantity,
       type: ActionType.Add,
+      payload: {
+        item,
+        quantity,
+      },
+    });
+
+  const openCart = (payload: boolean) =>
+    dispatch({
+      type: ActionType.OpenCart,
+      payload,
     });
 
   return {
     addToCart,
+    openCart,
+    removeItem,
   };
 };
 
